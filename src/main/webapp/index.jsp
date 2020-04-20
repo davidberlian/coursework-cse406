@@ -11,6 +11,9 @@
 </head>
 <body>
 	<center>
+		<p>put something here like introduction</p>
+		
+		
 		<a href="login.htm">Click here For Login</a>
 
 	</center>

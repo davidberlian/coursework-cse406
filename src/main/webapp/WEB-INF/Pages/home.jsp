@@ -27,9 +27,19 @@
 				</tr>
 				<tr>
 				</tr>
-						<form:hidden path="password" />
+						<form:hidden path="token" />
 				<tr>
 					<td colspan="3"><input type="submit" value="check savings" /></td>
+				</tr>
+			</table>
+		</form:form>
+		<form:form method="POST" action="logout.htm" commandName="user">
+			<table>
+				<tr>
+						<form:hidden path="username" />
+				</tr>
+				<tr>
+					<td colspan="3"><input type="submit" value="logout" /></td>
 				</tr>
 			</table>
 		</form:form>

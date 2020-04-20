@@ -19,12 +19,19 @@ public class SavingController {
 //	@Autowired
 //	private UserValidator userValidator;
 
-	@RequestMapping(value = "/saving.htm", method = RequestMethod.POST)
-	public String saving(@ModelAttribute("user") User user,
+	@RequestMapping(value = "/saving.htm")
+	public ModelAndView saving(@ModelAttribute("user") User user,
 			BindingResult result) {
-		
-		System.out.println("Saving of "+ user.getUsername());
-		return "saving";
+		ModelAndView model = null;
+		if(user.checkToken()) {
+			System.out.println("Saving of "+ user.getUsername()+" : "+ user.getSavings());
+			
+			model = new ModelAndView("saving", "user", user);
+		}else {
+			user = new User();
+			 model = new ModelAndView("redirect:/login.htm");
+		}
+		return model;
 	}
 
 	

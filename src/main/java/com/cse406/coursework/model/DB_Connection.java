@@ -84,6 +84,7 @@ public class DB_Connection{
     private void closeConnection() {
         try {
             if (con != null) {
+            	System.out.println("Connection Closed!");
                 con.close();
             }
             con = null;
@@ -102,6 +103,30 @@ public class DB_Connection{
         return myDbTest.read_query(query, args);
     }
     
+    public boolean write_query(String query) {
+    	java.sql.Statement smtm = null;
+		 java.sql.ResultSet rs = null;
+
+		 try {
+		     con = this.getConnection();
+		     if (con != null) {
+		    	 stmt = con.createStatement();
+		    	 int a = stmt.executeUpdate(query);
+		    	 closeConnection();
+		    	 if(a > 0) {
+		    		return true;
+		    	 }else {
+		    		 return false;
+		    	 }
+			 } else {
+			     System.out.println("Error: No active Connection");
+			 }
+		 } catch (Exception e) {
+			     e.printStackTrace();
+		 }
+		 return false;
+    }
+    
     public ArrayList<String[]> read_query(String query, String[] args){
     	 java.sql.Statement smtm = null;
 		 java.sql.ResultSet rs = null;
@@ -117,12 +142,14 @@ public class DB_Connection{
 		    		 rs = stmt.getResultSet();
 		    		 System.out.println("113+ "+rs);
 		    		 while(rs.next()) {
+		    			 
 		    			 String[] result = new String[10];
 		    			 for(int i=0; i<args.length; i++){
 		    				 result[i] = rs.getString(args[i]);
 		    			 }
 		    			 anotherList.add(result);
-		    			 }
+		    		 }
+	    			 
 		    		 
 		    	 }
 				

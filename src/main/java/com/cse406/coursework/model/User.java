@@ -35,6 +35,29 @@ public class User {
 		this.password = password;
 	}
 	
+	public String getSavings(String username) {
+		System.out.println("EXECUTE SQL");
+		try {
+			DB_Connection conn = new DB_Connection();
+			ArrayList<String[]> Response= conn.read_query(
+					"SELECT * "+
+					"FROM `savings` "+
+					"JOIN user ON user.id = savings.user_id "+
+					"WHERE user.username ='"+username+"' "
+					,new String[]{"last_transaction","total_savings"});
+			if(Response.isEmpty()) {
+				System.out.println("not found");
+			}else {
+				System.out.println(Response.get(0)[1]);
+				return Response.get(0)[1];
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "";
+	}
+	
 	public Boolean check_password(String username, String password){
 		System.out.println("EXECUTE SQL");
 		try {

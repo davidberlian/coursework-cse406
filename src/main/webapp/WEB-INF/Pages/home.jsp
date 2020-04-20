@@ -4,22 +4,35 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>manishjavadve.com</title>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<title></title>
 </head>
 <body>
 
 	<center>
 		<h1>
-			<span style="color: lightblue">Hi Welcome to Spring MVC World</span>
+			<span style="color: lightblue">Hi Welcome to bank bank</span>
 		</h1>
 		<h1>
-			<span style="color: green">Hi! ${user.username} you are login
-				successfully</span>
+			<span style="color: green">${user.username}</span>
 		</h1>
 		<h1>
-			<span style="color: lightblue">This is your home page</span>
+			<span style="color: lightblue"></span>
 		</h1>
-		<a href="config.htm">goto config</a>
+
+		<form:form method="POST" action="saving.htm" commandName="user">
+			<table>
+				<tr>
+						<form:hidden path="username" />
+				</tr>
+				<tr>
+				</tr>
+						<form:hidden path="password" />
+				<tr>
+					<td colspan="3"><input type="submit" value="check savings" /></td>
+				</tr>
+			</table>
+		</form:form>
 	</center>
 
 </body>

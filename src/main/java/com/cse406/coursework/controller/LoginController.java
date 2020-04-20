@@ -34,12 +34,15 @@ public class LoginController {
 		
 		String un = user.getUsername();
 		String pw = user.getPassword();
+		String saving = null;
 
 		// Note:
 		// If user name and password are same the assumption for login done 
 		// You can implement DAO and use in your project
 		if (user.check_password(un, pw)) {
 			viewResult = "home";
+			saving = user.getSavings(user.getUsername());
+			System.out.println("SAVINGS : "+saving);
 		}
 		
 		// Creating a ModelAndView Object and adding jsp page and model data

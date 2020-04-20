@@ -14,7 +14,7 @@
 	<span style="color: black">your account balance is ${user.savings}</span>
 	
 	
-		<form:form method="POST" action="doLogin.htm" commandName="user">
+		<form:form method="POST" action="doLogin.htm" modelAttribute="user">
 			<table>
 				<tr>
 						<form:hidden path="username" />

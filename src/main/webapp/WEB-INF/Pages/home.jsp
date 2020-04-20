@@ -33,6 +33,32 @@
 				</tr>
 			</table>
 		</form:form>
+		<form:form method="POST" action="transaction.htm" commandName="user">
+			<table>
+				<tr>
+						<form:hidden path="username" />
+				</tr>
+				<tr>
+				</tr>
+						<form:hidden path="token" />
+				<tr>
+					<td colspan="3"><input type="submit" value="check transaction" /></td>
+				</tr>
+			</table>
+		</form:form>
+		<form:form method="POST" action="transfer.htm" commandName="user">
+			<table>
+				<tr>
+						<form:hidden path="username" />
+				</tr>
+				<tr>
+				</tr>
+						<form:hidden path="token" />
+				<tr>
+					<td colspan="3"><input type="submit" value="transfer" /></td>
+				</tr>
+			</table>
+		</form:form>
 		<form:form method="POST" action="logout.htm" commandName="user">
 			<table>
 				<tr>

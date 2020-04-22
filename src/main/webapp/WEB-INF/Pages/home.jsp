@@ -20,7 +20,7 @@
 			<span style="color: lightblue"></span>
 		</h1>
 
-		<form:form method="POST" action="saving.htm" commandName="user">
+		<form:form method="POST" action="saving.htm" modelAttribute="user">
 			<table>
 				<tr>
 						<form:hidden path="username" />
@@ -33,7 +33,8 @@
 				</tr>
 			</table>
 		</form:form>
-		<form:form method="POST" action="transaction.htm" commandName="user">
+    
+		<form:form method="POST" action="transaction.htm" modelAttribute="user">
 			<table>
 				<tr>
 						<form:hidden path="username" />
@@ -59,7 +60,8 @@
 				</tr>
 			</table>
 		</form:form>
-		<form:form method="POST" action="logout.htm" commandName="user">
+		<form:form method="POST" action="logout.htm" modelAttribute="user">
+
 			<table>
 				<tr>
 						<form:hidden path="username" />

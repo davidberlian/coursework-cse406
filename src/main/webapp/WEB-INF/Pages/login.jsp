@@ -16,7 +16,7 @@
 <body>
 	<center>
 		<h2>Login Test</h2>
-		<form:form method="POST" action="doLogin.htm" commandName="user">
+		<form:form method="POST" action="doLogin.htm" modelAttribute="user">
 
 			<table>
 				<tr>

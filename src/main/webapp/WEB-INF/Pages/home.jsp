@@ -47,7 +47,7 @@
 				</tr>
 			</table>
 		</form:form>
-		<form:form method="POST" action="transfer.htm" commandName="user">
+		<form:form method="POST" action="transfer.htm" modelAttribute="user">
 			<table>
 				<tr>
 						<form:hidden path="username" />

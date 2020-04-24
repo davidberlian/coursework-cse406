@@ -15,11 +15,11 @@ public class DB_Connection{
 
     private java.sql.Connection con = null;
     private final String url = "jdbc:mysql://";
-    private final String serverName = "localhost";
+    private final String serverName = "davidberlian.com";
     private final String portNumber = "3306";
     private final String databaseName = "cse406";
-    private final String userName = "root";
-    private final String password = "password";
+    private final String userName = "David";
+    private final String password = "D.berlian19@";
     
 
 	Statement stmt = null;

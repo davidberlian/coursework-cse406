@@ -12,70 +12,120 @@
 <link href='https://fonts.googleapis.com/css?family=Cabin' rel='stylesheet'>
 
 <style>
-*{
-  box-sizing: border-box;
-}
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
+body, html {
+  height: 70%;
+  font-family: Avenir;
   margin: 0;
 }
 
 .header {
-  padding: 90px;
-  text-align: center;
-  background: ##5DADE2;
-  color: white;
-}
-
-.header h1 {
-  font-size: 40px;
-}
-
-.navbar {
   overflow: hidden;
-  background-color: #333;
-  position: sticky;
-  position: -webkit-sticky;
-  top: 0;
+  background-color: #white;
+  padding: 20px 10px;
 }
 
-.navbar a {
+.header a {
   float: left;
-  display: block;
-  color: white;
+  color: black;
   text-align: center;
-  padding: 14px 20px;
+  padding: 12px;
   text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 36px;
 }
 
-.navbar a.right {
+.header a.logo {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* Change the background color on mouse-over */
+.header a:hover {
+ opacity: 0.8;
+}
+
+/* Float the link section to the right */
+.header-right {
   float: right;
 }
 
-.navbar a:hover {
-  background-color: #ddd;
-  color: black;
+
+/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-right {
+    float: none;
+  }
 }
 
-.navbar a.active {
-  background-color: #666;
+.container {
+  position: relative;
+  text-align: center;
   color: white;
+}
+
+.right {
+  position: absolute;
+  top: 45%;
+  left: 18%;
+  transform: translate(-50%, -50%);
+}
+  
+.text{
+  color: Black;
+  font-family: Avenir;
+  font-size: 25px;
+}
+
+button {
+  background-color: #3C59D5;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 12px;
+}
+
+button:hover {
+  opacity: 0.8;
 }
 
 </style>
 
 
 <body>
+
+
+<div class="header" style = "background: #4cb8F3"></div>
+
 <div class="header">
-  <h1>Welcome to EE-Bank</h1>
-  <p>A <b>new style</b> of the internet banking</p>
+  <a href="#default" class="logo"> <span><img src="logo.png"style="width:150px;height:45px" /></span></a>
+  <div class="header-right">
+    <a href="#home">Home</a>
+    <a href="login.htm"  style = "background-color: #3C59D5; color : white">Sign in</a>
+  </div>
 </div>
 
-<div class="navbar">
-  <a href="login.htm" >Log in</a>
+<div class="container">
+  <img src="home.png" alt="Home" style="width:100%;">
+  	<div class="right">
+  		<div class="text"><b>Transfer, Pay, Save <br> easier than ever</b></div> <br>
+  		<div class="text" style="font-size: 20px">Open an account for free</div><br>
+
+  		 	<button type="submit" style="font-size:80%"><b>Join us now</b></button> 
+  	</div>
 </div>
+
+<div class="header" style = "background: rgb(24,187,217);
+background: linear-gradient(90deg, rgba(24,187,217,1) 0%, rgba(76,184,243,1) 59%, rgba(201,162,242,1) 100%);"></div>
+
 </body>
-
-
 </html>

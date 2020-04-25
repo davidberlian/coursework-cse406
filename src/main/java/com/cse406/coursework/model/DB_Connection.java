@@ -19,7 +19,7 @@ public class DB_Connection{
     private final String portNumber = "3306";
     private final String databaseName = "cse406";
     private final String userName = "root";
-    private final String password = "password";
+    private final String password = "password12345";
     
 
 	Statement stmt = null;

@@ -7,11 +7,11 @@
 
 <html>
 <title>EE-Bank: Sign into Online Banking</title>
+<script src="https://kit.fontawesome.com/6e68db03e6.js" crossorigin="anonymous"></script>
 <head>
-<link href='https://fonts.googleapis.com/css?family=Cabin' rel='stylesheet'>
 <style>
-form {border: 3px solid #f1f1f1;}
-body {font-family: 'Cabin'}
+body {
+	font-family: Avenir;}
 
 input[type=text], input[type=password] {
   width: 100%;
@@ -23,13 +23,14 @@ input[type=text], input[type=password] {
 }
 
 button {
-  background-color: #4CAF50;
+  background-color: royalblue;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
   cursor: pointer;
   width: 100%;
+  border-radius: 12px;
 }
 
 button:hover {
@@ -42,18 +43,18 @@ button:hover {
   background-color: #4CAF50;
 }
 
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-}
-
-img.avatar {
-  width: 0%;
-}
-
 .container {
-  padding: 16px;
+  padding: 2px;
 }
+
+.box{
+ margin: auto;
+  width: 60%;
+  border: 3px solid #f1f1f1;
+  padding: 10px;
+  background: white;
+  border-radius: 12px;
+ }
 
 span.psw {
   float: right;
@@ -72,54 +73,67 @@ span.psw {
 .error {
 	color: red;
 }
+
+.form .box input{
+	width 100%
+	font-size: 16px;
+	border: none;
+	border-bottom: 2px solid #777;
+	outline: none;
+	padding: 10px;
+	padding-left:25px;
+	box-sizing:border-box;
+	}
+	
+.banner {
+  background: rgb(24,187,217);
+  background: linear-gradient(90deg, rgba(24,187,217,1) 0%, rgba(76,184,243,1) 59%, rgba(201,162,242,1) 100%);
+  padding: 20px 10px;
+}
+
 </style>
 </head>
 
 
+<body>	
 
-<body>
-	
-<h2 style="font-size:200%;"> E E - B A N K 
-<span><img src="money.png"style="width:60px;height:60px" /></span>  </h2> 
+<center>
+<h2 style="font-size:10%;"> <img src="logo.png"style="width:150px;height:45px"/> </h2> 
+</center>
 
-<div class="container" style="background-color:#f1f1f1">
-		<p style="font-size:200%;"> Sign Into Online Banking</p>
-</div>	
-
-  
-  <form:form method="POST" action="doLogin.htm" modelAttribute="user">
-  <div class="container">
-		<center>
-			<table>
-				<tr>
-					<td>UserName :</td>
-					<td><form:input path="username" /></td>
-					<td><form:errors path="username" cssClass="error" /></td>
-				</tr>
-	
-				<tr>
-					<td>Password :</td>
-					<td><form:password path="password" /></td>
-					<td><form:errors path="password" cssClass="error" /></td>
-				</tr>
-
-				<tr>
-					<td colspan="3"> <button type="submit">L o g i n</button> </td>	
-			</table>
-		</center>
+<div class="container" style="background-color:white"> 
+	<center>
+		<p style="font-size:250%;  letter-spacing: 4px; color: royalblue">Welcome back!</p>
+		<p style="font-size:95%;  letter-spacing: 2px";>Member Login</p><br>
+	</center>
+	<div class="box">
+		<form:form method="POST" action="doLogin.htm" modelAttribute="user">
 			
-			<label>
-     			 <input type="checkbox" checked="checked" name="remember"> Save Username
-			</label>	
- </div>
- 
- <div class="container" style="background-color:#f1f1f1">
- <p> New User? 
- <button type="submit" class="registerbtn" style ="background-color: red">Create an account</button>
-   			 <span class="psw">Forgot <a href="#">password?</a></span></p>
- </div>
- </form:form>	
+						<i class="fas fa-user"></i>
+								<form:input path="username" placeholder="Enter Username"/>
+								<form:errors path="username" cssClass="error" />
+						<i class="fas fa-lock"></i>	
+								<form:password path="password" placeholder="Enter password"/>
+								<form:errors path="password" cssClass="error" />
+								
+						<p style="font-size:60%"> <span class="psw" style= "color: royalblue"> <a href="#">Forgot Password</a></span></p>		
+						<button type="submit" style="font-size:80%"><b>L o g i n</b></button> 
+						
+						<label style="font-size:60%">
+			     			 <input type="checkbox" checked="checked" name="remember"> Remember me
+						</label>	
+			
+			<center> <p style="font-size:80%"> <a href="#">Register</a></center>
 		
-	
+		</form:form>
+	</div>
+</div>
+
+<br>
+<div class="container" style = "background-color: #4CB8F3"> </div> <br>
+
+
+
+
 </body>
 </html>
